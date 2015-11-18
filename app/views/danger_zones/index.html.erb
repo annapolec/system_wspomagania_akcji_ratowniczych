@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Danger Zones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>X</th>
+      <th>Y</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @danger_zones.each do |danger_zone| %>
+      <tr>
+        <td><%= danger_zone.x %></td>
+        <td><%= danger_zone.y %></td>
+        <td><%= link_to 'Show', danger_zone %></td>
+        <td><%= link_to 'Edit', edit_danger_zone_path(danger_zone) %></td>
+        <td><%= link_to 'Destroy', danger_zone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Danger zone', new_danger_zone_path %>

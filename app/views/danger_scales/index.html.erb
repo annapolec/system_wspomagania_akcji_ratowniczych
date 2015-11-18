@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Danger Scales</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @danger_scales.each do |danger_scale| %>
+      <tr>
+        <td><%= danger_scale.value %></td>
+        <td><%= link_to 'Show', danger_scale %></td>
+        <td><%= link_to 'Edit', edit_danger_scale_path(danger_scale) %></td>
+        <td><%= link_to 'Destroy', danger_scale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Danger scale', new_danger_scale_path %>

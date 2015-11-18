@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :tracks
+  resources :weather_conditions
+  resources :danger_zones
+  resources :tourists
+  resources :danger_scales
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

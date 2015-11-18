@@ -1,0 +1,2 @@
+module DangerScalesHelper
+end

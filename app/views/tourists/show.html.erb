@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>X:</strong>
+  <%= @tourist.x %>
+</p>
+
+<p>
+  <strong>Y:</strong>
+  <%= @tourist.y %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @tourist.status %>
+</p>
+
+<%= link_to 'Edit', edit_tourist_path(@tourist) %> |
+<%= link_to 'Back', tourists_path %>

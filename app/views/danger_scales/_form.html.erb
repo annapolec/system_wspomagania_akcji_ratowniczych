@@ -1,0 +1,21 @@
+<%= form_for(@danger_scale) do |f| %>
+  <% if @danger_scale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@danger_scale.errors.count, "error") %> prohibited this danger_scale from being saved:</h2>
+
+      <ul>
+      <% @danger_scale.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :value %><br>
+    <%= f.number_field :value %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

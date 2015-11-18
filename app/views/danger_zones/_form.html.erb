@@ -1,0 +1,25 @@
+<%= form_for(@danger_zone) do |f| %>
+  <% if @danger_zone.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@danger_zone.errors.count, "error") %> prohibited this danger_zone from being saved:</h2>
+
+      <ul>
+      <% @danger_zone.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :x %><br>
+    <%= f.number_field :x %>
+  </div>
+  <div class="field">
+    <%= f.label :y %><br>
+    <%= f.number_field :y %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
