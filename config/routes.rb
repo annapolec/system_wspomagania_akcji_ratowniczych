@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'home#index'
+
   resources :tracks
   resources :weather_conditions
   resources :danger_zones

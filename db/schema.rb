@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151118213044) do
+ActiveRecord::Schema.define(version: 20151126104423) do
 
   create_table "danger_scales", force: :cascade do |t|
     t.integer  "value",      default: 1
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20151118213044) do
     t.integer  "difficulty_level"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "name"
   end
 
   create_table "weather_conditions", force: :cascade do |t|

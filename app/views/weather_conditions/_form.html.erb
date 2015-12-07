@@ -12,9 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :float %><br>
-    <%= f.text_field :float %>
+    <%= f.label :temperature %><br>
+    <%= f.number_field :temperature %>
   </div>
+  <div class="field">  
+    <%= f.label :rain %><br>
+    <%= f.number_field :rain%>
+  </div>
+  <div class="field">
+    <%= f.label :wind %><br>
+    <%= f.number_field :wind %>
+  </div>
+  <div class="field">  
+    <%= f.label :avalanche_danger_level %><br>
+    <%= f.number_field :avalanche_danger_level %>
+  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
