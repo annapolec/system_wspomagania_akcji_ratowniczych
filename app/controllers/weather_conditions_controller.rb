@@ -28,8 +28,7 @@ class WeatherConditionsController < ApplicationController
 
     respond_to do |format|
       if @weather_condition.save
-        format.html { redirect_to @weather_condition, notice: 'Weather condition was successfully created.' }
-        format.json { render :show, status: :created, location: @weather_condition }
+        format.html { redirect_to root_path, notice: 'Weather condition was successfully created.' }
       else
         format.html { render :new }
         format.json { render json: @weather_condition.errors, status: :unprocessable_entity }
@@ -69,6 +68,6 @@ class WeatherConditionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def weather_condition_params
-      params.require(:weather_condition).permit(:float)
+      params.require(:weather_condition).permit(:temperature, :wind, :rain, :avalanche_danger_level)
     end
 end
