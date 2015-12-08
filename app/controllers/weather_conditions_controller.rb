@@ -60,6 +60,10 @@ class WeatherConditionsController < ApplicationController
     end
   end
 
+  def generate_sample_conditions
+    WeatherCondition.generate_sample_conditions
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_weather_condition

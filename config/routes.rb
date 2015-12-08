@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :tracks
-  resources :weather_conditions
+  resources :weather_conditions do
+    get :generate_sample_conditions, on: collection
+  end
+  
   resources :danger_zones
   resources :tourists
   resources :danger_scales

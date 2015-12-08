@@ -18,4 +18,14 @@ class WeatherCondition < ActiveRecord::Base
 	return 2 if self.wind > 30 and self.wind <= 80
 	return 3 if self.wind >80
 	end
+
+	def WeatherCondition.generate_sample_conditions
+		temperature = rand(75)-25
+		rain = rand(150)
+		wind = rand(100)
+		avalanche_danger_level = rand(5)
+		@weather_condition = WeatherCondition.new(temperature: temperature, rain: rain, wind: wind, 
+			avalanche_danger_level: avalanche_danger_level)
+		return @weather_condition
+	end
 end

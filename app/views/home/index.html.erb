@@ -1,6 +1,28 @@
-<div class="row">
-	<%= render 'weather_conditions/form' %>
-<div>
-<div class="row">
-	Skala zagrożenia <%= DangerScale.calculate_danger_scale %>
+Obecna skala zagrożenia <%= DangerScale.calculate_danger_scale(WeatherCondition.last) %>
+<%= render 'weather_conditions/form' %>
+<button class="js-generate-weather-conditions"> Generate Weather Condition </button>
+
+<table>
+	<tr>
+		<td>Date & Time</td>
+		<td>Temperature [C]</td>
+		<td>Rain [mm/m^2]</td>
+		<td>Wind [km/h]</td>
+		<td>Danger Scale</td>
+	</tr>
+	<% WeatherCondition.order(created_at: :desc).each do |weather_condition| %>
+	<tr>
+		<td><%= weather_condition.created_at %></td>
+		<td><%= weather_condition.temperature %></td>
+		<td><%= weather_condition.rain %></td>
+		<td><%= weather_condition.wind %></td>
+		<td><%= DangerScale.calculate_danger_scale(weather_condition) %></td>
+	</tr>
+	<% end %>
+	
+</table>
+
+
+	
+	
 
