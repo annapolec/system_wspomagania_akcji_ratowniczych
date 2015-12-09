@@ -1,0 +1,19 @@
+<%= form_for(@random_weather_condition) do |f| %>
+
+  <div class="field">
+    <%= f.hidden_field :temperature, value: WeatherCondition.random_temperature %>
+  </div>
+  <div class="field">  
+    <%= f.hidden_field :rain, value: WeatherCondition.random_rain %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :wind, value: WeatherCondition.random_wind %>
+  </div>
+  <div class="field">  
+    <%= f.hidden_field :avalanche_danger_level, value: WeatherCondition.random_avalanche_danger_level %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "Generate new weather conditions" %>
+  </div>
+<% end %>

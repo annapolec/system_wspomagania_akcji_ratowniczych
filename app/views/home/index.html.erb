@@ -1,6 +1,6 @@
 Obecna skala zagrożenia <%= DangerScale.calculate_danger_scale(WeatherCondition.last) %>
 <%= render 'weather_conditions/form' %>
-<button class="js-generate-weather-conditions"> Generate Weather Condition </button>
+<%= render 'weather_conditions/random_conditions_form' %>
 
 <table>
 	<tr>
